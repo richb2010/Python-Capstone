@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<title>Soccer Max  - login page</title>
+</head>
+<body>
+<div class="container">
+  <h1>Please login</h1>
+  <br>
+  <form method="POST" action="/">
+      {{ form.hidden_tag() }}
+      {{ form.name.label }} {{ form.name(size=20) }}
+      <input type="submit" value="Go">
+  </form>
+    <input type="text" placeholder="Username" name="username" value="{{
+      request.form.username }}">
+     <input type="password" placeholder="Password" name="password" value="{{
+      request.form.password }}">
+    <input class="btn btn-default" type="submit" value="Login">
+  </form>
+  {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+  {% endif %}
+</div>
+</body>
+</html>
+
+
+
+
+

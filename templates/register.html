@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/" method = "POST">
+    <title> Register for an account </title>
+    <div class="register">
+        <h1>Register for an account </h1>
+        <div class="links">
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for ('home') }}">Home</a>
+        </div>
+        <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+           <label for="Frist name">
+            <i class="fas fa-user"></i>
+           </label>
+           <label for="Last name">
+            <i class="fas fa-name"></i>
+           </label>
+            <label for="username">
+                <i class="fas fa-user"></i>
+            </label>
+         <label>
+                <input type="text" name="First Name" placeholder="First Name" id="First Name" required>
+        </label>
+         <label>
+                <input type="text" name="Last Name" placeholder="Last Name" id="Last Name" required>
+        </label>
+           <label><input type="text" name="username" placeholder="Username" id="username" required>
+        </label>
+            
+            <label for="password">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+            </label>
+            <input type="email" name="email" placeholder="Email" id="email" required>
+            <div class="msg">{{ msg }}</div>
+            
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+<h3>Already Have an Account?</h3><br>
+<h3><a href ="{{url_for('login')}}"> <button>Login Here</button></a></h3>
+{% endblock %}

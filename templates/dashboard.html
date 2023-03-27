@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/" method = "POST"></form>
+<title> Welcome Soccer official</title>
+<div class="Soccer official">
+    <h1>Welcome</h1>
+    <div class="links">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for ('home') }}">Home</a>
+        <a href="{{ url_for ('signout') }}">signout</a>
+    </div>
+    <form action="{{ url_for('dashboard') }}" method="post" autocomplete="off">
+        <label for="Soccer dashboard"></label>
+        <br>
+        <input type="Game" name="Game Number"
+                placeholder="Game Number"
+                value="{{ request.form('Soccer Games')}}"></input>
+        <br>
+        <label for="content"> Home</label>
+        <br>
+        <label for="content"> Away</label>
+        <br>
+        <label for="content"> Score </label>
+        <br>
+        <label for="content"> Yellow Card </label>
+        <br> 
+        <label for="content"> Red Card</label>
+        <br>
+        <textarea name="content"> 
+                  placeholder="Yellow Card"
+                  row="10" 
+                  cols="60"
+                >{{ <request.form['content']}}</textarea>
+        <textarea name="content" 
+                placeholder="Red Card"
+                rows="15"
+                cols="20"
+                < {{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+        <table>
+            <caption>
+              A summary of Soccer games
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Games</th>
+                <th scope="col">Field</th>
+                <th scope="col">Home team</th>
+                <th scope="col">Away team</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Home Score</th>
+                <td>0</td>
+                <td>10"'</td>
+                <td>Yellow and / or Red card</td>
+              </tr>
+              <tr>
+                <th scope="row">Away Score</th>
+                <td>0</td>
+                <td>10"'</td>
+                <td>Yellow and / or Red card</td>
+              </tr>
+          
+              <!-- several other great bands -->
+          
+              <tr>
+                <th scope="row">Officials</th>
+                <td>Center Officials</td>
+                <td>AR1 Officials</td>
+                <td>AR2 Officials</td>
+              </tr>
+            </tbody>
+            <tfoot>
+            </table>
+          
+    </form>
+
+    {% endblock %}
+
+
+
+
+
+</div>
